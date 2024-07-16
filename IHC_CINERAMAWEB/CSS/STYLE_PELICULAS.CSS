@@ -1,0 +1,57 @@
+.lista-peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .pelicula-item {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .enlace {
+    display: block;
+  }
+  
+  .imagen {
+    width: 182px;
+    height: 262px;
+    border-radius: 10%;
+    position: relative;
+    filter: brightness(0.6); 
+    transition: filter 0.3s; 
+  }
+  
+  .imagen:hover {
+    filter: brightness(1); 
+  }
+  
+  .descripcion {
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto Condensed', sans-serif;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .comprar-link {
+    position: absolute;
+    bottom: 150px;
+    left: 45%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    color: #ffffff; /* Cambiado a blanco */
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 3px 8px;
+    cursor: pointer;
+    text-decoration: none; /* Quitado el subrayado */
+    font-weight: bold; /* Agregada negrita */
+  }
+  
+  
+  .comprar-link:hover {
+    background-color: rgba(255, 255, 255, 0.5); 
+  }

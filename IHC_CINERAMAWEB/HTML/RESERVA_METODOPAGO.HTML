@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- USER WAY ACCESIBILITY -->
+    <script
+      src="https://cdn.userway.org/widget.js"
+      data-account="2CI6j9fC2f"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinerama| R Resumen de compra</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../CSS/STYLE_HEADER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_FOOTER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_CONFITERIA.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_RESUMENOMPRA.CSS" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JS -->
+    <script src="../SCRIPTS/SCRIPT_I_FECHA.JS"></script>
+    <script src="../SCRIPTS/SCRIPT_I_HEADER.JS"></script>
+    <script src="../SCRIPTS/SCRIPT_I_CONFITERIA.JS"></script>
+  </head>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .datos-personales {
+      margin: 20px;
+    }
+    .datos-personales .form-group {
+      margin-bottom: 20px;
+    }
+    .datos-personales label {
+      font-weight: bold;
+    }
+    .datos-personales .btn-custom {
+      background-color: #fd0061;
+      border-color: #313131;
+      font-weight: bold;
+      color: #fff;
+    }
+    .datos-personales .btn-custom:hover {
+      background-color: #e50054;
+      border-color: #272727;
+    }
+    .PAGOS {
+      margin: 50px;
+    }
+    .PAGOS .card {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .PAGOS .card-header {
+      background-color: #343a40;
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      padding: 15px;
+      cursor: pointer;
+    }
+    .PAGOS .card-header button {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .PAGOS .card-header button:hover {
+      color: #ffc107;
+    }
+    .PAGOS .card-body {
+      background-color: #fff;
+      border-radius: 0 0 10px 10px;
+      padding: 20px;
+    }
+    .PAGOS .form-group {
+      margin-bottom: 15px;
+    }
+    .PAGOS .custom-btn-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .PAGOS .btn-custom {
+      background-color: #fd0061;
+      border-color: #313131;
+      font-weight: bold;
+      color: #fff;
+    }
+    .PAGOS .btn-custom:hover {
+      background-color: #e50054;
+      border-color: #272727;
+    }
+    .PAGOS .form-check {
+      margin-top: 20px;
+    }
+    .PAGOS .footer-text {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #6c757d;
+    }
+    .PAGOS .footer-text p {
+      margin-bottom: 5px;
+    }
+    .PAGOS .form-check-label {
+      margin-left: 10px;
+    }
+    .PAGOS .container {
+      max-width: 700px;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="../ICONOS/ICON LOGO WHITE.png" alt="LOGO" />
+        </a>
+      </div>
+
+      <nav>
+        <ul class="center-links">
+          <li><a href="INDEX.HTML">Inicio</a></li>
+          <li><a href="CARTELERA.HTML">Cartelera</a></li>
+          <li><a href="PROX_ESTRENOS.HTML">Proximos Estrenos</a></li>
+          <li><a href="CONFITERIA.HTML">Confiteria</a></li>
+          <li><a href="NUESTROS_CINES.HTML">Nuestros Cines</a></li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </nav>
+    </header>
+
+    <main class="PAGOS">
+      <div class="container">
+        <div class="card mt-5">
+          <h3 class="text-center p-3">Métodos de Pago</h3>
+          <form>
+            <div class="accordion" id="paymentMethods">
+              <div class="d-flex justify-content-between total">
+                <span>Total</span>
+                <span>S/36.00</span>
+              </div>
+              <br />
+              <!-- Física -->
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Física
+                    </button>
+                  </h5>
+                </div>
+                <div
+                  id="collapseOne"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#paymentMethods"
+                >
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="dniFisica">DNI:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="dniFisica"
+                        name="dniFisica"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="nombresFisica">Nombres:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombresFisica"
+                        name="nombresFisica"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="apellidosFisica">Apellidos:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="apellidosFisica"
+                        name="apellidosFisica"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="numeroCelularFisica"
+                        >Número de Celular:</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="numeroCelularFisica"
+                        name="numeroCelularFisica"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="correoFisica">Correo Electrónico:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="correoFisica"
+                        name="correoFisica"
+                        required
+                      />
+                    </div>
+                    <!-- Terms and Conditions -->
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoTerminosFisica"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoTerminosFisica"
+                      >
+                        Acepto los Términos y Condiciones y Política de
+                        Privacidad.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoFinalidadesFisica"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoFinalidadesFisica"
+                      >
+                        He leído y acepto las finalidades de Tratamiento
+                        necesario de datos.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoOpcionalFisica"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoOpcionalFisica"
+                      >
+                        Acepto el tratamiento opcional de datos.
+                      </label>
+                    </div>
+                    <div class="footer-text">
+                      <p>* No se hacen cambios ni devoluciones</p>
+                      <p>* Toda la información de pago es segura</p>
+                      <p>
+                        * Algunas de las tarjetas de débito con CVV podrían ser
+                        rechazadas por la plataforma de pago que utilizamos
+                        debido a las políticas de seguridad del banco
+                      </p>
+                    </div>
+                    <!-- Buttons -->
+                    <div
+                      class="custom-btn-container mt-5 d-flex justify-content-between align-items-center"
+                    >
+                      <a
+                        href="RESERVA_CONFITERIA.HTML"
+                        class="btn btn-lg btn-primary"
+                        >Volver</a
+                      >
+                      <a
+                        href="RESERVA_FINAL.HTML"
+                        class="btn btn-lg btn-custom"
+                        style="
+                          background-color: red;
+                          border-color: #313131;
+                          font-weight: bold;
+                          color: rgb(255, 255, 255);
+                        "
+                        >Continuar</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tarjeta Débito/Crédito -->
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Tarjeta Débito/Crédito
+                    </button>
+                  </h5>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#paymentMethods"
+                >
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="tipoDocumentoTarjeta"
+                        >Tipo de Documento:</label
+                      >
+                      <select
+                        class="form-control"
+                        id="tipoDocumentoTarjeta"
+                        name="tipoDocumentoTarjeta"
+                        required
+                      >
+                        <option value="DNI">DNI</option>
+                        <option value="Carnet de Extranjería">
+                          Carnet de Extranjería
+                        </option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="RUT">RUT</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="numeroDocumentoTarjeta"
+                        >Número de Documento:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="numeroDocumentoTarjeta"
+                        name="numeroDocumentoTarjeta"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="nombresTitular">Nombres del Titular:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombresTitular"
+                        name="nombresTitular"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="apellidosTitular"
+                        >Apellidos del Titular:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="apellidosTitular"
+                        name="apellidosTitular"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="numeroTarjeta">Número de la Tarjeta:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="numeroTarjeta"
+                        name="numeroTarjeta"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="tipoTarjeta">Tipo de Tarjeta:</label>
+                      <div class="d-flex">
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="tipoTarjeta"
+                            id="tarjetaCredito"
+                            value="Credito"
+                            required
+                          />
+                          <label class="form-check-label" for="tarjetaCredito"
+                            >Crédito</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="tipoTarjeta"
+                            id="tarjetaDebito"
+                            value="Debito"
+                            required
+                          />
+                          <label class="form-check-label" for="tarjetaDebito"
+                            >Débito</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="codigoSeguridad"
+                        >Código de Seguridad (CVV):</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="codigoSeguridad"
+                        name="codigoSeguridad"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="fechaExpiracion">Fecha de Expiración:</label>
+                      <div class="row">
+                        <div class="col">
+                          <select
+                            class="form-control"
+                            id="mesExpiracion"
+                            name="mesExpiracion"
+                            required
+                          >
+                            <option value="">Mes</option>
+                            <option value="01">01 - Enero</option>
+                            <option value="02">02 - Febrero</option>
+                            <option value="03">03 - Marzo</option>
+                            <option value="04">04 - Abril</option>
+                            <option value="05">05 - Mayo</option>
+                            <option value="06">06 - Junio</option>
+                            <option value="07">07 - Julio</option>
+                            <option value="08">08 - Agosto</option>
+                            <option value="09">09 - Septiembre</option>
+                            <option value="10">10 - Octubre</option>
+                            <option value="11">11 - Noviembre</option>
+                            <option value="12">12 - Diciembre</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <select
+                            class="form-control"
+                            id="anoExpiracion"
+                            name="anoExpiracion"
+                            required
+                          >
+                            <option value="">Año</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <!-- Agrega más años según sea necesario -->
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="numeroCelularTarjeta"
+                        >Número de Celular:</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="numeroCelularTarjeta"
+                        name="numeroCelularTarjeta"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="correoTarjeta">Correo Electrónico:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="correoTarjeta"
+                        name="correoTarjeta"
+                        required
+                      />
+                    </div>
+                    <!-- Terms and Conditions -->
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoTerminosTarjeta"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoTerminosTarjeta"
+                      >
+                        Acepto los Términos y Condiciones y Política de
+                        Privacidad.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoFinalidadesTarjeta"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoFinalidadesTarjeta"
+                      >
+                        He leído y acepto las finalidades de Tratamiento
+                        necesario de datos.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoOpcionalTarjeta"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoOpcionalTarjeta"
+                      >
+                        Acepto el tratamiento opcional de datos.
+                      </label>
+                    </div>
+                    <div class="footer-text">
+                      <p>* No se hacen cambios ni devoluciones</p>
+                      <p>* Toda la información de pago es segura</p>
+                      <p>
+                        * Algunas de las tarjetas de débito con CVV podrían ser
+                        rechazadas por la plataforma de pago que utilizamos
+                        debido a las políticas de seguridad del banco
+                      </p>
+                    </div>
+                    <!-- Buttons -->
+                    <div
+                      class="custom-btn-container mt-5 d-flex justify-content-between align-items-center"
+                    >
+                      <a
+                        href="RESERVA_CONFITERIA.HTML"
+                        class="btn btn-lg btn-primary"
+                        >Volver</a
+                      >
+                      <a
+                        href="RESERVA_FINAL.HTML"
+                        class="btn btn-lg btn-custom"
+                        style="
+                          background-color: red;
+                          border-color: #313131;
+                          font-weight: bold;
+                          color: rgb(255, 255, 255);
+                        "
+                        >Continuar</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Billetera Digital -->
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Billetera Digital
+                    </button>
+                  </h5>
+                </div>
+                <div
+                  id="collapseThree"
+                  class="collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#paymentMethods"
+                >
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="tipoDocumentoBilletera"
+                        >Tipo de Documento:</label
+                      >
+                      <select
+                        class="form-control"
+                        id="tipoDocumentoBilletera"
+                        name="tipoDocumentoBilletera"
+                        required
+                      >
+                        <option value="DNI">DNI</option>
+                        <option value="Carnet de Extranjería">
+                          Carnet de Extranjería
+                        </option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="RUT">RUT</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="numeroDocumentoBilletera"
+                        >Número de Documento:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="numeroDocumentoBilletera"
+                        name="numeroDocumentoBilletera"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="numeroCelularBilletera"
+                        >Número de Celular:</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="numeroCelularBilletera"
+                        name="numeroCelularBilletera"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="correoBilletera">Correo Electrónico:</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="correoBilletera"
+                        name="correoBilletera"
+                        required
+                      />
+                    </div>
+                    <div class="form-group text-center">
+                      <img
+                        src="../IMAGENES/QR YAPE.png"
+                        alt="Billetera Digital"
+                        class="img-fluid"
+                        width="300"
+                        height="300"
+                      />
+                    </div>
+                    <!-- Terms and Conditions -->
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoTerminosBilletera"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoTerminosBilletera"
+                      >
+                        Acepto los Términos y Condiciones y Política de
+                        Privacidad.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoFinalidadesBilletera"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoFinalidadesBilletera"
+                      >
+                        He leído y acepto las finalidades de Tratamiento
+                        necesario de datos.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="aceptoOpcionalBilletera"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="aceptoOpcionalBilletera"
+                      >
+                        Acepto el tratamiento opcional de datos.
+                      </label>
+                    </div>
+                    <div class="footer-text">
+                      <p>* No se hacen cambios ni devoluciones</p>
+                      <p>* Toda la información de pago es segura</p>
+                      <p>
+                        * Algunas de las tarjetas de débito con CVV podrían ser
+                        rechazadas por la plataforma de pago que utilizamos
+                        debido a las políticas de seguridad del banco
+                      </p>
+                    </div>
+                    <!-- Buttons -->
+                    <div
+                      class="custom-btn-container mt-5 d-flex justify-content-between align-items-center"
+                    >
+                      <a
+                        href="RESERVA_CONFITERIA.HTML"
+                        class="btn btn-lg btn-primary"
+                        >Volver</a
+                      >
+                      <a
+                        href="RESERVA_FINAL.HTML"
+                        class="btn btn-lg btn-custom"
+                        style="
+                          background-color: red;
+                          border-color: #313131;
+                          font-weight: bold;
+                          color: rgb(255, 255, 255);
+                        "
+                        >Continuar</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap JavaScript dependencies -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha384-6PeHgpV3Vh8wYo5xWp5ThzxzuHXdMv6qIu9+cZXQsB5CNDzoV9M4/tvusJm2p3Vy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

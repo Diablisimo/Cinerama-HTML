@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gráficos de Google</title>
+    <!--Load the AJAX API-->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      // Load the Visualization API and the corechart package.
+      google.charts.load("current", { packages: ["corechart"] });
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawCharts);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart and the bar chart, passes in the data and draws them.
+      function drawCharts() {
+        // Create the data table for the pie chart.
+        var pieData = new google.visualization.DataTable();
+        pieData.addColumn("string", "Topping");
+        pieData.addColumn("number", "Slices");
+        pieData.addRows([
+          ["Avatar", 2788],
+          ["Avengers: End Game", 2798],
+          ["Titanic", 2187],
+          ["Star Wars: El despertar de la fuerza", 2069],
+          ["Avengers: Infinity War", 2048],
+        ]);
+
+        // Set pie chart options
+        var pieOptions = {
+          title: "Películas más taquilleras",
+          width: 400,
+          height: 300,
+        };
+
+        // Create the pie chart.
+        var pieChart = new google.visualization.PieChart(
+          document.getElementById("pie_chart_div")
+        );
+        pieChart.draw(pieData, pieOptions);
+
+        // Create the data table for the bar chart.
+        var barData = google.visualization.arrayToDataTable([
+          ["Cliente", "Satisfacción", { role: "style" }],
+          ["Jóvenes", 7, "color: #76A7FA"],
+          ["Adultos", 8, "color: #76A7FA"],
+          ["Ancianos", 6, "color: #76A7FA"],
+          ["Discapacitados", 9, "color: #76A7FA"],
+        ]);
+
+        // Set bar chart options
+        var barOptions = {
+          title: "Satisfacción de la página en los clientes",
+          width: 400,
+          height: 300,
+          hAxis: { title: "Clientes" },
+          vAxis: { title: "Satisfacción", minValue: 0, maxValue: 10 },
+        };
+
+        // Create the bar chart.
+        var barChart = new google.visualization.ColumnChart(
+          document.getElementById("bar_chart_div")
+        );
+        barChart.draw(barData, barOptions);
+      }
+    </script>
+  </head>
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="pie_chart_div" style="display: inline-block"></div>
+    <!--Div that will hold the bar chart-->
+    <div id="bar_chart_div" style="display: inline-block"></div>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- USER WAY ACCESIBILITY -->
+    <script
+      src="https://cdn.userway.org/widget.js"
+      data-account="2CI6j9fC2f"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinerama</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../CSS/STYLE_BUSCADOR.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_HEADER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_CARRUSEL.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_FOOTER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_PELICULAS.CSS" />
+
+    <!-- AQUI USAMOS CLOUDFLARE Y BOOSTRAP PARA LOS ICONOS Y RESPONSIVE -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- SCRIPTS -->
+
+    <script
+      src="https://cdn.userway.org/widget.js"
+      data-account="2CI6j9fC2f"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../SCRIPTS/SCRIPT_I_FILTRO.JS"></script>
+    <script src="../SCRIPTS/SCRIPT_I_FECHA.JS"></script>
+    <script src="../SCRIPTS/SCRIPT_I_HEADER.JS"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <!-- HEADER DE LA PAGINA  -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="../ICONOS/ICON LOGO WHITE.png" alt="LOGO" />
+        </a>
+      </div>
+      <!-- USAMOS LISTAS PARA PODER HACER EL HEADER Y ORDENARLO  -->
+      <nav>
+        <ul class="center-links">
+          <li><a href="INDEX.HTML">Inicio</a></li>
+          <li><a href="CARTELERA.HTML">Cartelera</a></li>
+          <li><a href="PROX_ESTRENOS.HTML">Proximos Estrenos</a></li>
+          <li><a href="CONFITERIA.HTML">Confiteria</a></li>
+          <li><a href="NUESTROS_CINES.HTML">Nuestros Cines</a></li>
+        </ul>
+        <div class="reserve">
+          <a href="CARTELERA.HTML">Reserva</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </nav>
+    </header>
+    <!-- CENTRO DE LA PAGINA -->
+    <div class="CENTRO">
+      <!-- CARRUSEL DE LAS IMAGENES O LA PORTADA -->
+      <main class="Carrusel">
+        <section class="carrusel-slider">
+          <div
+            id="carruselEjemploOscuro"
+            class="carousel carousel-dark slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carruselEjemploOscuro"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carruselEjemploOscuro"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carruselEjemploOscuro"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img
+                  src="../IMAGENES/GARFIELD_SLIDER.jpg"
+                  class="d-block w-100"
+                  alt="First slide"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Garfield: fuera de casa</h5>
+                  <p>
+                    El mundialmente famoso Garfield, el gato casero que odia los
+                    lunes y que adora la lasaña, está a punto de vivir una
+                    aventura ¡en el salvaje mundo exterior! Tras una inesperada
+                    reunión con su largamente perdido padre "el desaliñado gato
+                    callejero Vic" Garfield y su amigo canino Odie se ven
+                    forzados a abandonar sus perfectas y consentidas vidas al
+                    unirse a Vic en un hilarante y muy arriesgado atraco.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  src="../IMAGENES/WOLVERINEXDEADPOOL_SLIDER.jpg"
+                  class="d-block w-100"
+                  alt="Second slide"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>DeadPool 3</h5>
+                  <p>
+                    Tercera entrega de la saga "Deadpool", ahora integrada en el
+                    Universo Cinematográfico de Marvel (MCU) pero manteniendo su
+                    enfoque para adultos, con calificación R. En septiembre de
+                    2022 se confirmó la aparición de Hugh Jackman como Lobezno,
+                    por primera vez desde "Logan".
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../IMAGENES/PLANETADELOS_SIMIOS_SLIDER.jpg"
+                  class="d-block w-100"
+                  alt="Third slide"
+                />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>El planeta de los simios: nuevo reino</h5>
+                  <p>
+                    Ambientada varias generaciones en el futuro tras el reinado
+                    de César, en la que los simios son la especie dominante que
+                    vive en armonía y los humanos se han visto reducidos a vivir
+                    en la sombra. Mientras un nuevo y tiránico líder simio
+                    construye su imperio, un joven simio emprende un angustioso
+                    viaje que le llevará a cuestionarse todo lo que sabe sobre
+                    el pasado y a tomar decisiones que definirán el futuro de
+                    simios y humanos por igual.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carruselEjemploOscuro"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carruselEjemploOscuro"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+      </main>
+      <!-- MENU DE BUSQUEDAD DE PELICULAS O FITLRO -->
+      <section class="Menu-busquedad">
+        <h6>Compra tus películas</h6>
+        <hr />
+        <div class="Buscar-pelicula">
+          <label for="pelicula-select">Pelicula:</label>
+          <select id="pelicula-select" onchange="buscarPeliculas(this.value)">
+            <option value="Planeta de los simios">Planeta de los simios</option>
+            <option value="Bad Boys">Bad Boys</option>
+            <option value="Mufasa : El Rey Leon">Mufasa : El Rey Leon</option>
+            <option value="Garfield">Garfield</option>
+            <option value="Deadpool 3">Deadpool 3</option>
+          </select>
+
+          <label for="cine-select">Cine:</label>
+          <select id="cine-select">
+            <option value="#">Cine Pacifico</option>
+            <option value="#">Cine Minka</option>
+            <option value="#">Cine Chimbote</option>
+            <option value="#">Cine Quinde</option>
+            <option value="#">Cine Cajamarca</option>
+            <option value="#">Cine Tarapoto</option>
+            <option value="#">Cine Sol</option>
+            <option value="#">Cine Huacho</option>
+            <option value="#">Cine Moyobamba</option>
+            <option value="#">Cine Cusco</option>
+            <option value="#">Cine Piura</option>
+          </select>
+
+          <div class="fecha-wrapper">
+            <label for="fecha-select">Fecha:</label>
+            <select id="fecha-select"></select>
+          </div>
+        </div>
+      </section>
+      <!-- PELICULAS EN HORZONTAL -->
+      <h4 class="titulo">PELICULAS</h4>
+      <section class="peliculas-lista">
+        <div class="lista-peliculas">
+          <div class="pelicula-item">
+            <a target="_blank" href="CARTELERA.HTML" class="enlace">
+              <img src="../IMAGENES/PLANETADELOS_SIMIOS.jpg" class="imagen" />
+              <span class="descripcion">Planeta de los simios</span>
+              <a href="#" class="comprar-link">Comprar</a>
+            </a>
+          </div>
+          <div class="pelicula-item">
+            <a target="_blank" href="CARTELERA.HTML" class="enlace">
+              <img src="../IMAGENES/BAD_BOYS.jpg" class="imagen" />
+              <span class="descripcion">Bad Boys</span>
+              <a href="#" class="comprar-link">Comprar</a>
+            </a>
+          </div>
+          <div class="pelicula-item">
+            <a target="_blank" href="CARTELERA.HTML" class="enlace">
+              <img src="../IMAGENES/MUFASA_ELREYLEON.jpg" class="imagen" />
+              <span class="descripcion">Mufasa : El Rey Leon</span>
+              <a href="#" class="comprar-link">Comprar</a>
+            </a>
+          </div>
+          <div class="pelicula-item">
+            <a target="_blank" href="CARTELERA.HTML" class="enlace">
+              <img src="../IMAGENES/GARFIELD.jpg" class="imagen" />
+              <span class="descripcion">Garfield</span>
+              <a href="#" class="comprar-link">Comprar</a>
+            </a>
+          </div>
+          <div class="pelicula-item">
+            <a target="_blank" href="CARTELERA.HTML" class="enlace">
+              <img src="../IMAGENES/WOLVERINEXDEADPOOL.jpg" class="imagen" />
+              <span class="descripcion">Deadpool 3</span>
+              <a href="#" class="comprar-link">Comprar</a>
+            </a>
+          </div>
+        </div>
+      </section>
+      <br />
+    </div>
+    <!-- FOOTER DE LA PAGINA  -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 mb-3">
+            <h4>Compañia</h4>
+            <ul>
+              <li><a href="CARTELERA.HTML">Cartelera</a></li>
+              <li><a href="PROX_ESTRENOS.HTML">Próximos Estrenos</a></li>
+              <li><a href="CARTELERA.HTML">Reservas</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Ayuda</h4>
+            <ul>
+              <li><a href="CONTACTANOS.HTML">Contáctanos</a></li>
+              <li><a href="#">Problemas con la plataforma</a></li>
+              <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="CONTACTO_EVENTOS.HTML">Eventos Especiales</a></li>
+              <li><a href="CONTACTO_EVENTOS.HTML">Publicidad</a></li>
+              <li>
+                <a href="CONTACTO_EVENTOS.HTML">Contratos Corporativos</a>
+              </li>
+              <li><a href="CONTACTO_EVENTOS.HTML">Eventos</a></li>
+              <li><a href="CONTACTANOS.HTML">Contáctanos</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Síguenos</h4>
+            <div class="social-link">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

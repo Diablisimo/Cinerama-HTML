@@ -1,0 +1,15 @@
+.cinema-container {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Color de fondo */
+  }
+  .map-container {
+    border-left: 2px solid red;
+    padding-left: 20px;
+  }
+  .map-container iframe {
+    height: 200px; /* Altura del mapa */
+    width: 100%;
+  }

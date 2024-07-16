@@ -1,0 +1,32 @@
+
+    .Informacion_Pelicula {
+      background-color: #ff3535;
+      border: 2px solid rgb(0, 0, 0);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .Informacion_Pelicula h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: rgb(255, 255, 255);
+    }
+
+    .Informacion_Pelicula .list-group-item {
+      background-color: transparent;
+      border-color: transparent;
+      font-size: 18px;
+      border-bottom: 1px solid rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+    }
+
+    @media (max-width: 767px) {
+      .Informacion_Pelicula {
+        padding: 10px;
+      }
+
+      .Informacion_Pelicula h2 {
+        font-size: 20px;
+      }
+    }

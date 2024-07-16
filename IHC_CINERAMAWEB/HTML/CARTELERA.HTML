@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- USER WAY ACCESIBILITY -->
+    <script
+      src="https://cdn.userway.org/widget.js"
+      data-account="2CI6j9fC2f"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinerama| Cartelera</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../CSS/STYLE_HEADER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_FOOTER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_BUSCADOR_CARTELERA.CSS" />
+    <!-- UIKIT PARA REPRODUCCION DE VIDEOS EN MINIATURA -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.21.0/dist/css/uikit.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- JS -->
+    <script src="../SCRIPTS/SCRIPT_I_FECHA.JS"></script>
+    <script src="../SCRIPTS/SCRIPT_I_HEADER.JS"></script>
+    <!-- UIKIT para reproducir los videos :D -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.0/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.0/dist/js/uikit-icons.min.js"></script>
+    <script>
+      UIkit.video(element, options);
+    </script>
+    <!-- DESLIZAMIENTO DE LA CARTELERA ASI FUNCIONA EN RESPONSIVE Y EN COMPUTADORA -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var movieContainer = document.querySelector(".content-wrapper");
+
+        // Agregar evento de desplazamiento solo a la sección de películas
+        movieContainer.addEventListener("wheel", function (event) {
+          event.preventDefault();
+          var scrollAmount = event.deltaY * 40;
+          movieContainer.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth",
+          });
+        });
+
+        // Asegurar que la línea sea visible al desplazar las películas
+        movieContainer.addEventListener("scroll", function () {
+          var lineBetween = document.querySelector(".line-between");
+          if (movieContainer.scrollLeft > 0) {
+            lineBetween.style.display = "block";
+          } else {
+            lineBetween.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="../ICONOS/ICON LOGO WHITE.png" alt="LOGO" />
+        </a>
+      </div>
+
+      <nav>
+        <ul class="center-links">
+          <li><a href="INDEX.HTML">Inicio</a></li>
+          <li><a href="CARTELERA.HTML">Cartelera</a></li>
+          <li><a href="PROX_ESTRENOS.HTML">Proximos Estrenos</a></li>
+          <li><a href="CONFITERIA.HTML">Confiteria</a></li>
+          <li><a href="NUESTROS_CINES.HTML">Nuestros Cines</a></li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </nav>
+    </header>
+
+    <!-- PELICULAS EN CARTELERA -->
+    <main id="main-section">
+      <h2 class="section-title">Cartelera</h2>
+      <div class="filter-options">
+        <!-- FILTRADO DE CINES  -->
+        <div class="filter-section">
+          <label for="cine-filter">Filtrar por Cine:</label>
+          <select id="cine-filter">
+            <option value="#">Cine Pacifico</option>
+            <option value="#">Cine Minka</option>
+            <option value="#">Cine Chimbote</option>
+            <option value="#">Cine Quinde</option>
+            <option value="#">Cine Cajamarca</option>
+            <option value="#">Cine Tarapoto</option>
+            <option value="#">Cine Sol</option>
+            <option value="#">Cine Huacho</option>
+            <option value="#">Cine Moyobamba</option>
+            <option value="#">Cine Cusco</option>
+            <option value="#">Cine Piura</option>
+          </select>
+        </div>
+        <!-- BUSQUEDAD POR FECHA ESTA FUNCION USANDO JS HACEMOS QUE NOS DE SOLO 5 FECHAS EN TIEMPO REAL -->
+        <div class="filter-section">
+          <label for="fecha-select">Filtrar por Fecha:</label>
+          <select id="fecha-select"></select>
+        </div>
+      </div>
+      <!-- LA SECCION DEL DIVIDER ES UNA LINEA LA CUAL SEPARA LA FECHA Y LA BUSQUEDAD DEL CINE O EL FILTRADO
+       DE LOS HORARIOS O FUNCIONES -->
+      <hr class="section-divider" />
+      <div class="content-wrapper">
+        <!-- PELICULA 1 BAD BOYS -->
+        <div class="movie-container">
+          <!-- LLAMAMOS A LA IMAGEN QUE ESTA EN AL CARPETA DE IMAGENES Y LA DECLARALOS COMO IMAGEN 1 -->
+          <img
+            src="../IMAGENES/BAD_BOYS.jpg"
+            alt="Imagen 1"
+            class="cartelera-image"
+          />
+          <!-- UIKIT QUE NOS PERMITE REPRODUCIR LOS "TRAILERS " O VIDEOS QUE INCLUIMOS-->
+          <button
+            class="uk-button uk-button-default uk-margin"
+            type="button"
+            uk-toggle="target: +"
+          >
+            VER TRAILER
+          </button>
+          <!-- MEDIANTE EL USO DE UIKIT LLAMAMOS EL VIDEO QUE TENEMOS DENTRO DE LA CARPETA
+          VIDEOS Y ESTE PERMITE QUE SE REPRODUSCA -->
+          <video
+            src="../VIDEOS/BAD BOYS RIDE OR DIE TRAILER.mp4"
+            width="1920"
+            height="1080"
+            controls
+            playsinline
+            hidden
+            uk-video
+          ></video>
+          <!-- INFORMACION SOBRE LA PELICULA  -->
+          <!-- DENTRO DE ESTA TENEMOS EL NOMBRE Y LA DESCRIPCION DE LA MISMA -->
+          <div class="movie-info">
+            <h3 class="movie-title">Bad Boys: Ride or Die</h3>
+            <p class="movie-description">
+              Descripción: Los policías de la vieja escuela Mike Lowery y Marcus
+              Burnett volverán a patrullar juntos para derrotar al líder vicioso
+              de un cartel de drogas de Miami.
+            </p>
+            <!-- TENEMOS LAS FUNCIONES DE LA MISMA LA CUAL SON BOTONES QUE REDIRECCIONAN A LA RESERVA DE LOS ASIENTOS -->
+            <div class="movie-schedule-wrapper">
+              <p class="movie-schedule">Funciones:</p>
+              <div class="schedule-buttons">
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PELICULA 2 GARFIELD -->
+        <div class="movie-container">
+          <img
+            src="../IMAGENES/GARFIELD.jpg"
+            alt="Imagen 1"
+            class="cartelera-image"
+          />
+          <button
+            class="uk-button uk-button-default uk-margin"
+            type="button"
+            uk-toggle="target: +"
+          >
+            VER TRAILER
+          </button>
+
+          <video
+            src="../VIDEOS/GARFIELD TRAILER.mp4"
+            width="1920"
+            height="1080"
+            controls
+            playsinline
+            hidden
+            uk-video
+          ></video>
+          <div class="movie-info">
+            <h3 class="movie-title">Garfield: La película</h3>
+            <p class="movie-description">
+              Descripción: Tras una inesperada reunión con su largamente perdido
+              padre, el gato callejero Vic, Garfield y su amigo canino Odie se
+              ven forzados a abandonar sus perfectas y consentidas vidas al
+              unirse a Vic en un hilarante y muy arriesgado atraco.
+            </p>
+            <div class="movie-schedule-wrapper">
+              <p class="movie-schedule">Funciones:</p>
+              <div class="schedule-buttons">
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PELICULA 3 MUFASA -->
+        <div class="movie-container">
+          <img
+            src="../IMAGENES//MUFASA_ELREYLEON.jpg"
+            alt="Imagen 1"
+            class="cartelera-image"
+          />
+          <button
+            class="uk-button uk-button-default uk-margin"
+            type="button"
+            uk-toggle="target: +"
+          >
+            VER TRAILER
+          </button>
+
+          <video
+            src="../VIDEOS/MUFASA TRAILER.mp4"
+            width="1920"
+            height="1080"
+            controls
+            playsinline
+            hidden
+            uk-video
+          ></video>
+          <div class="movie-info">
+            <h3 class="movie-title">Mufasa: El rey león</h3>
+            <p class="movie-description">
+              Descripción: La historia se cuenta en flashbacks y presenta a
+              Mufasa como un cachorro huérfano, perdido y solo hasta que conoce
+              a un simpático león llamado Taka, heredero de un linaje real. Este
+              encuentro casual pone en marcha un viaje de un extraordinario
+              grupo de inadaptados que buscan su destino.
+            </p>
+            <div class="movie-schedule-wrapper">
+              <p class="movie-schedule">Funciones:</p>
+              <div class="schedule-buttons">
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PELICULA 4 PLANETA DE LOS SIMIOS -->
+        <div class="movie-container">
+          <img
+            src="../IMAGENES/PLANETADELOS_SIMIOS.jpg"
+            alt="Imagen 1"
+            class="cartelera-image"
+          />
+          <button
+            class="uk-button uk-button-default uk-margin"
+            type="button"
+            uk-toggle="target: +"
+          >
+            VER TRAILER
+          </button>
+
+          <video
+            src="../VIDEOS/PLANETA DE LOS SIMIOS TRAILER.mp4"
+            width="1920"
+            height="1080"
+            controls
+            playsinline
+            hidden
+            uk-video
+          ></video>
+          <div class="movie-info">
+            <h3 class="movie-title">El planeta de los simios: nuevo reino</h3>
+            <p class="movie-description">
+              Descripción: Ambientada varias generaciones en el futuro tras el
+              reinado de César, en la que los simios son la especie dominante
+              que vive en armonía y los humanos se han visto reducidos a vivir
+              en la sombra. Mientras un nuevo y tiránico líder simio construye
+              su imperio, un joven simio emprende un angustioso viaje que le
+              llevará a cuestionarse todo lo que sabe sobre el pasado y a tomar
+              decisiones que definirán el futuro de simios y humanos por igual.
+            </p>
+            <div class="movie-schedule-wrapper">
+              <p class="movie-schedule">Funciones:</p>
+              <div class="schedule-buttons">
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PELICULA 2 DEADPOOL -->
+        <div class="movie-container">
+          <img
+            src="../IMAGENES/WOLVERINEXDEADPOOL.jpg"
+            alt="Imagen 1"
+            class="cartelera-image"
+          />
+          <button
+            class="uk-button uk-button-default uk-margin"
+            type="button"
+            uk-toggle="target: +"
+          >
+            VER TRAILER
+          </button>
+
+          <video
+            src="../VIDEOS/DEADPOOL TRAILER.mp4"
+            width="1920"
+            height="1080"
+            controls
+            playsinline
+            hidden
+            uk-video
+          ></video>
+          <div class="movie-info">
+            <h3 class="movie-title">DeadPool 3</h3>
+            <p class="movie-description">
+              Descripción: Lobezno se recupera de sus heridas cuando se cruza
+              con el bocazas, Deadpool, que ha viajado en el tiempo para curarlo
+              con la esperanza de hacerse amigos y formar un equipo para acabar
+              con un enemigo común.
+            </p>
+            <div class="movie-schedule-wrapper">
+              <p class="movie-schedule">Funciones:</p>
+              <div class="schedule-buttons">
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+                <a href="RESERVA_BUTACAS.HTML" class="schedule-button">9:30</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 mb-3">
+            <h4>Compañia</h4>
+            <ul>
+              <li><a href="CARTELERA.HTML">Cartelera</a></li>
+              <li><a href="PROX_ESTRENOS.HTML">Próximos Estrenos</a></li>
+              <li><a href="CARTELERA.HTML">Reservas</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Ayuda</h4>
+            <ul>
+              <li><a href="CONTACTANOS.HTML">Contáctanos</a></li>
+              <li><a href="#">Problemas con la plataforma</a></li>
+              <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="CONTACTO_EVENTOS.HTML">Eventos Especiales</a></li>
+              <li><a href="CONTACTO_EVENTOS.HTML">Publicidad</a></li>
+              <li>
+                <a href="CONTACTO_EVENTOS.HTML">Contratos Corporativos</a>
+              </li>
+              <li><a href="CONTACTO_EVENTOS.HTML">Eventos</a></li>
+              <li><a href="CONTACTANOS.HTML">Contáctanos</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Síguenos</h4>
+            <div class="social-link">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

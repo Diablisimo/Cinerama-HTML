@@ -1,0 +1,44 @@
+.product-card {
+  text-align: center;
+  margin: 20px auto;
+  color: #000;
+  font-weight: bold;
+}
+.product-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.nav-tabs .nav-link {
+  border: none;
+  color: #000;
+  font-weight: bold;
+}
+.nav-tabs .nav-link.active {
+  border: none;
+  color: #000;
+}
+.nav-tabs {
+  justify-content: center;
+}
+.accordion .card-header .btn-link {
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+.row.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+.custom-btn-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente en todas las pantallas */
+}
+
+@media (min-width: 768px) {
+  .custom-btn-container {
+    justify-content: flex-end; /* Alinea a la derecha en pantallas grandes */
+  }
+}

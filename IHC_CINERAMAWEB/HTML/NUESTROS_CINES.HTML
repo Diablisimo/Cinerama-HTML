@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- USER WAY ACCESIBILITY -->
+    <script
+      src="https://cdn.userway.org/widget.js"
+      data-account="2CI6j9fC2f"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinerama| Nuestros Cines</title>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../CSS/STYLE_CINES.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_HEADER.CSS" />
+    <link rel="stylesheet" href="../CSS/STYLE_FOOTER.CSS" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- JS -->
+    <script src="../SCRIPTS/SCRIPT_I_FECHA.JS"></script>
+    <script src="../SCRIPTS/SCRIPT_I_HEADER.JS"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <style>
+      .TEXTO {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      #pie_chart_div,
+      #bar_chart_div {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1 1 300px;
+        max-width: 400px;
+        box-sizing: border-box;
+      }
+    </style>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+
+      google.charts.setOnLoadCallback(drawCharts);
+
+      function drawCharts() {
+        var pieData = new google.visualization.DataTable();
+        pieData.addColumn("string", "Topping");
+        pieData.addColumn("number", "Slices");
+        pieData.addRows([
+          ["Avatar", 2788],
+          ["Avengers: End Game", 2798],
+          ["Titanic", 2187],
+          ["Star Wars: El despertar de la fuerza", 2069],
+          ["Avengers: Infinity War", 2048],
+        ]);
+
+        var pieOptions = {
+          title: "Películas más taquilleras",
+          width: 400,
+          height: 300,
+        };
+
+        var pieChart = new google.visualization.PieChart(
+          document.getElementById("pie_chart_div")
+        );
+        pieChart.draw(pieData, pieOptions);
+
+        var barData = google.visualization.arrayToDataTable([
+          ["Cliente", "Satisfacción", { role: "style" }],
+          ["Jóvenes", 7, "color: #76A7FA"],
+          ["Adultos", 8, "color: #76A7FA"],
+          ["Ancianos", 6, "color: #76A7FA"],
+          ["Discapacitados", 9, "color: #76A7FA"],
+        ]);
+
+        var barOptions = {
+          title: "Satisfacción de la página en los clientes",
+          width: 400,
+          height: 300,
+          hAxis: { title: "Clientes" },
+          vAxis: { title: "Satisfacción", minValue: 0, maxValue: 10 },
+        };
+
+        var barChart = new google.visualization.ColumnChart(
+          document.getElementById("bar_chart_div")
+        );
+        barChart.draw(barData, barOptions);
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="../ICONOS/ICON LOGO WHITE.png" alt="LOGO" />
+        </a>
+      </div>
+
+      <nav>
+        <ul class="center-links">
+          <li><a href="INDEX.HTML">Inicio</a></li>
+          <li><a href="CARTELERA.HTML">Cartelera</a></li>
+          <li><a href="PROX_ESTRENOS.HTML">Proximos Estrenos</a></li>
+          <li><a href="CONFITERIA.HTML">Confiteria</a></li>
+          <li><a href="NUESTROS_CINES.HTML">Nuestros Cines</a></li>
+        </ul>
+        <div class="reserve">
+          <a href="CARTELERA.HTML">Reserva</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </nav>
+    </header>
+    <main class="mapas">
+      <br />
+      <h3 class="TEXTO">ESTADISTICAS DE NUESTROS CINES</h3>
+      <div class="chart-container">
+        <div id="pie_chart_div"></div>
+        <div id="bar_chart_div"></div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA PACIFICO</h2>
+                    <p>AV JOSE PARDO 121 MIRAFLORES - LIMA - LIMA</p>
+                    <a
+                      href="https://maps.app.goo.gl/USvvyuNKfQBff6xf8"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.8932420985784!2d-77.0297518!3d-12.1194565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c819da3664d5%3A0x9fd753c45f01e12c!2sEdificio%20El%20Pac%C3%ADfico%2C%20Av.%20Jos%C3%A9%20Pardo%20121%2C%20Miraflores%2015074!5e0!3m2!1ses-419!2spe!4v1720253869167!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA MINKA</h2>
+                    <p>
+                      AV ARGENTINA 3093 CC MINKA 2DO NIVEL CALLAO - CALLAO -
+                      CALLAO
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/place/Minka/@-12.0482144,-77.1140067,17z/data=!4m6!3m5!1s0x9105c94a6ea3cb51:0x4ec1db89cd06ff69!8m2!3d-12.0482197!4d-77.1114342!16s%2Fg%2F12hlbpv08?entry=ttu"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.931785699949!2d-77.11400672194294!3d-12.048214441925975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c94a6ea3cb51%3A0x4ec1db89cd06ff69!2sMinka!5e0!3m2!1ses-419!2spe!4v1720254098267!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA CHIMBOTE</h2>
+                    <p>
+                      AV. V. RAUL H. DE LA TORRE MZA. B LOTE. 1A SECTOR CAMPO
+                      FERIAL SAN P ANCASH SANTA CHIMBOTE
+                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/s1aDVFsEMvuqLWS97"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.5756767726343!2d-78.56049742557559!3d-9.102362194086373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab840382eb656d%3A0x756cb259716ea2e3!2sMegaPlaza%20Chimbote!5e0!3m2!1ses-419!2spe!4v1720506128813!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA QUINDE</h2>
+                    <p>AV LOS MAESTROS S/N CC EL QUINDE</p>
+                    <a
+                      href="https://www.google.com/maps/place/MegaPlaza+Ica/@-14.074399,-75.7577173,15z/data=!4m10!1m2!2m1!1sAv+de+los+Maestros+el+quinde!3m6!1s0x9110e2ec5f515db5:0x6fabc73b25a5aa2e!8m2!3d-14.074399!4d-75.7396929!15sChxBdiBkZSBsb3MgTWFlc3Ryb3MgZWwgcXVpbmRlWh4iHGF2IGRlIGxvcyBtYWVzdHJvcyBlbCBxdWluZGWSAQ9zaG9wcGluZ19jZW50ZXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUndaMk0zTjFoQkVBReABAA!16s%2Fg%2F1q5bm0dmj?entry=ttu"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15480.188201230958!2d-75.7577173445801!3d-14.07439899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e2ec5f515db5%3A0x6fabc73b25a5aa2e!2sMegaPlaza%20Ica!5e0!3m2!1ses-419!2spe!4v1720505185337!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA TARAPOTO</h2>
+                    <p>
+                      AV ALFONSO UGARTE 1360 SAN MARTIN - SAN MARTIN - TARAPOTO
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/place/Av+Alfonso+Ugarte+1360,+Tarapoto+22201/@-6.4925096,-76.3753578,17z/data=!3m1!4b1!4m6!3m5!1s0x91ba0bf19c134445:0xb929940d33ea1e9c!8m2!3d-6.4925149!4d-76.3727829!16s%2Fg%2F11fn4lrdm9?entry=ttu"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.230205280483!2d-76.37535782561754!3d-6.492509563475161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ba0bf19c134445%3A0xb929940d33ea1e9c!2sAv%20Alfonso%20Ugarte%201360%2C%20Tarapoto%2022201!5e0!3m2!1ses-419!2spe!4v1720505507908!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA CAJAMARCA</h2>
+                    <p>
+                      JR SOR MANUELA GIL 151 CC EL QUINDE CAJAMARCA - CAJAMARCA
+                      - CAJAMARCA
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/place/MegaPlaza+Cajamarca/@-7.0952245,-78.7721884,10.17z/data=!4m10!1m2!2m1!1sMEGAPLAZA+CAJAMARCA!3m6!1s0x91b25b1cff5e3f45:0x6e6df31bbdab9892!8m2!3d-7.1496867!4d-78.5095253!15sChNNRUdBUExBWkEgQ0FKQU1BUkNBIgOIAQFaFSITbWVnYXBsYXphIGNhamFtYXJjYZIBD3Nob3BwaW5nX2NlbnRlcuABAA!16s%2Fg%2F11l38_1h_y?entry=ttu"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1979.397499944824!2d-78.51131346115675!3d-7.149686854439736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b25b1cff5e3f45%3A0x6e6df31bbdab9892!2sMegaPlaza%20Cajamarca!5e0!3m2!1ses-419!2spe!4v1720505707102!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA SOL</h2>
+                    <p>AV SAN MARTIN 727 CC PLAZA DEL SOL ICA - ICA - ICA</p>
+                    <a
+                      href="https://maps.app.goo.gl/SktvUjxUqo9YVKxC8"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.110895499522!2d-75.73108692546761!3d-14.070628282877317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e29725fb829b%3A0x692a8596663968b8!2sPlaza%20del%20Sol%20Ica!5e0!3m2!1ses-419!2spe!4v1720505772091!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA HUACHO</h2>
+                    <p>COLON 601 CC PLAZA DEL SOL 2DO NIVEL</p>
+                    <a
+                      href="https://www.google.com/maps/place/Plaza+del+Sol+-+Huacho/@-11.109456,-77.6162697,17z/data=!3m1!4b1!4m6!3m5!1s0x9106df0c9e5596e7:0x1e3a172c9b082890!8m2!3d-11.1094613!4d-77.6136948!16s%2Fg%2F1td43kgf?entry=ttu"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.052624246616!2d-77.61626972553637!3d-11.109456025156746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9106df0c9e5596e7%3A0x1e3a172c9b082890!2sPlaza%20del%20Sol%20-%20Huacho!5e0!3m2!1ses-419!2spe!4v1720505849907!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA MOYOBAMBA</h2>
+                    <p>JR MANUEL DEL AGUILA 542 MOYOBAMBA</p>
+                    <a
+                      href="https://www.google.com/maps/place/Jr.+Manuel+del+%C3%81guila+542,+Moyobamba+22001/@-6.0354534,-76.9762268,17.58z/data=!4m6!3m5!1s0x91b73b02c136288d:0x8bcbf2aca47a0ef1!8m2!3d-6.0353932!4d-76.9747161!16s%2Fg%2F11sjsg3s8v?entry=ttu"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2648.1239880539265!2d-76.97622682605025!3d-6.035453407491092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b73b02c136288d%3A0x8bcbf2aca47a0ef1!2sJr.%20Manuel%20del%20%C3%81guila%20542%2C%20Moyobamba%2022001!5e0!3m2!1ses-419!2spe!4v1720505923692!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA CUSCO</h2>
+                    <p>
+                      CALLE CRUZ VERDE 347 CC IMPERIAL ´PLAZA CUSCO - CUSCO -
+                      CUSCO
+                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/BGwrU2kpaE6DMGv46"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.2468328829805!2d-71.98271262548138!3d-13.52043807108621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd675ca88e8df%3A0x68ce6a98cacc8e58!2sC.C.%20Imperial%20Plaza!5e0!3m2!1ses-419!2spe!4v1720505983927!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="cinema-container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>CINERAMA PIURA</h2>
+                    <p>AV GRAU 1460 CC. PLAZA DEL SOL</p>
+                    <a
+                      href="https://maps.app.goo.gl/GZeZAgvLrJwC1PaL8"
+                      class="btn btn-danger"
+                      target="_blank"
+                      >Ir a Google Maps</a
+                    >
+                  </div>
+                  <div class="col-md-8 map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1364.8317903552693!2d-80.64117509643665!3d-5.192946805027832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a1a8410ee3d1d%3A0xeed46aef31c99915!2sPlaza%20del%20Sol%20Piura%20Grau!5e0!3m2!1ses-419!2spe!4v1720506068059!5m2!1ses-419!2spe"
+                      frameborder="0"
+                      style="border: 0"
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 mb-3">
+            <h4>Compañia</h4>
+            <ul>
+              <li><a href="CARTELERA.HTML">Cartelera</a></li>
+              <li><a href="PROX_ESTRENOS.HTML">Próximos Estrenos</a></li>
+              <li><a href="CARTELERA.HTML">Reservas</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Ayuda</h4>
+            <ul>
+              <li><a href="CONTACTANOS.HTML">Contáctanos</a></li>
+              <li><a href="#">Problemas con la plataforma</a></li>
+              <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="CONTACTO_EVENTOS.HTML">Eventos Especiales</a></li>
+              <li><a href="CONTACTO_EVENTOS.HTML">Publicidad</a></li>
+              <li>
+                <a href="CONTACTO_EVENTOS.HTML">Contratos Corporativos</a>
+              </li>
+              <li><a href="CONTACTO_EVENTOS.HTML">Eventos</a></li>
+              <li><a href="CONTACTANOS.HTML">Contáctanos</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h4>Síguenos</h4>
+            <div class="social-link">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+.titulo {
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin: 20px 0;
+}
+
+.Menu-busquedad {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+  }
+
+  h6 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+  }
+
+  .Buscar-pelicula {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #555;
+  }
+
+  select {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    color: #555;
+  }
+
+  .fecha-wrapper {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
+    display: block; 
+    margin-right: 10px; 
+  }
+  
+  .fecha-wrapper select {
+    width: 100%;
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .Buscar-pelicula {
+      flex-direction: column;
+    }
+
+    select, .fecha-wrapper {
+      width: 100%;
+    }
+}
+
+
+
